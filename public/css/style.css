@@ -1,0 +1,154 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23-feb-2020, 12.24.39
+    Author     : devis
+*/
+
+/* .navbar-brand {
+    display: inline-block;
+    text-indent: -9999px;
+    width: 160px;
+    background: url(../img/pretty-2-th.jpg) center center no-repeat;
+} */
+
+body {
+    background-color: #EEEEEE;
+}
+
+.text-blue {
+    color: #8EC2FF;
+}
+
+.text-violet {
+    color: rgb(119, 0, 255);
+}
+
+.navbar-light {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+.navbar {
+    padding: 0;
+}
+
+.navbar .navbar-brand {
+    padding: 0;
+}
+
+.navbar .navbar-nav {
+    font-size: 16px;
+    color: #000000;
+}
+
+.navbar-light .navbar-brand {
+    background-color: rgb(255, 255, 255);
+    font-size: x-large;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.navbar .navbar-nav .nav-item {
+    position: relative;
+    margin: 0 1em;
+  }
+
+.navbar .navbar-nav .nav-item::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: rgb(119, 0, 255);
+    width: 0%;
+    content: "";
+    height: 2px;
+    transition: all 0.5s;
+  }
+  
+.navbar .navbar-nav .nav-item:hover::after {
+    width: 100%;
+  }
+
+.btn-outline-myviolet {
+    background-color: white;
+    color: rgb(119, 0, 255);
+    border: 2px solid rgb(119, 0, 255);
+    border-radius: 20px;
+}
+
+.btn-outline-myviolet:hover {
+    background-color: rgb(119, 0, 255); 
+    color: white;
+}
+
+.btn-outline-secondary {
+    background-color: white;
+}
+
+.btn-primary-see-more {
+    color:#EEEEEE;
+    background-color: rgb(119, 0, 255);
+    border-color: rgb(119, 0, 255);
+}
+
+.btn-primary-see-more:hover {
+    color:#EEEEEE;
+    box-shadow: none;
+}
+
+.btn-download {
+    background-color: rgb(119, 0, 255);
+    color:#EEEEEE;
+    border-radius: 20px;
+}
+
+.btn-download:hover {
+    color:#EEEEEE;
+    background-color: rgb(105, 0, 224);
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border-color: rgba(0, 0, 0, 0.068);
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,.2);
+}
+
+.form-select {
+    width:auto;
+    display:inline-block;
+}
+
+.form-select:focus {
+    border-color: rgba(0, 0, 0, 0.068);
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,.2);
+} 
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.068);
+    border-radius: 5px;
+  }
+
+.border {
+    border-color: rgba(0, 0, 0, 0.068);
+    border-radius: 5px;
+}
+
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #f6d365;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right bottom, #0D6EFD, rgb(105, 0, 224));
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right bottom, #0D6EFD, rgb(105, 0, 224))
+}
+
+.invalid-title {
+    border-color: red;
+    color: red;
+}
