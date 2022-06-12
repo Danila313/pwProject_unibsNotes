@@ -61,7 +61,11 @@
 <div class="row justify-content-center pt-5">
         <div class="w-100 col text-center">
             <select id="department" name="department" class="form-select" onchange="if (this.selectedIndex) filter_faculties()">
-                <option selected="selected" value="">@lang('note.department')</option>
+                @if(isset($department))
+                    <option selected="selected" value="">{{$department->name}}</option>
+                @else 
+                    <option selected="selected" value="">@lang('note.department')</option>
+                @endif
                 @foreach($departments as $department)
                     <option value="{{ $department->id }}">{{$department->name}}</option>
                 @endforeach
