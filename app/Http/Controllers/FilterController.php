@@ -18,12 +18,19 @@ class FilterController extends Controller
 
     public function filter(Request $request) {
         $dl = new DataLayer();
-        $notes_list = $dl->filter($request->input('department'), $request->input('faculty'), $request->input('year'), $request->input('score'));
+        $department_id = $request->input('department');
+        $faculty_id = $request->input('faculty');
+        $year = $request->input('year');
+        $score = $request->input('score');
+        $notes_list = $dl->filter($department_id, $faculty_id, $year, $score);
+
+        $department = $dl->getDepartment($department_id);
+        $faculty = $dl->getFaculty($faculty_id);
     
         $departments = $dl->allDepartments();
         $faculties = $dl->allFaculties();
 
-        return view('index')->with('notesList', $notes_list)->with('departments', $departments)->with('faculties', $faculties);
+        return view('index')->with('notesList', $notes_list)->with('departments', $departments)->with('faculties', $faculties)->with('department', $department)->with('faculty', $faculty)->with('year', $year)->with('score', $score);
     }
 
     public function getFaculties(Request $request) {

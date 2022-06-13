@@ -71,6 +71,7 @@
             <th scope="col">@lang('note.writer')</th>
             <th scope="col"># @lang('note.pages')</th>
             <th scope="col"></th>
+            <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -81,6 +82,7 @@
             <td>{{ $note->course }}</td>
             <td>{{ $note->writer->firstname }} {{ $note->writer->lastname }}</td>
             <td>{{ $note->num_pages }}</td>
+            <td><a href="{{ route('note.downloadAgain', ['note' => $note->id]) }}" class="btn btn-primary btn-sm active" role="button" style="border-radius: 20px;"> @lang('buttons.download')</a></td>
             <td><a href="{{ route('user.mynotes.mydownloadednote', ['note' => $note->id]) }}" class="btn btn-primary-see-more btn-sm active" role="button" style="border-radius: 20px;"> @lang('buttons.details') <i class="bi bi-chevron-right"></i></i></a></td>
             </tr>
             @endforeach

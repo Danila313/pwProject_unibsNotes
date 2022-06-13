@@ -90,7 +90,7 @@ function checkNote(button){
 function confirm_note_deletion(){
     $.confirm({
         title: 'Attention!',
-        content: 'You are deleting this note. Are you sure?',
+        content: 'You are deleting this note. Do you confirm?',
         buttons: {
             somethingElse: {
                 text: 'Confirm',
@@ -104,6 +104,26 @@ function confirm_note_deletion(){
         },
         
     });
+}
+
+function confirm_go_back(){
+    $.confirm({
+        title: 'Attention!',
+        content: 'If you go back you will lose all the data you just entered. Do you confirm?',
+        buttons: {
+            somethingElse: {
+                text: 'Confirm',
+                btnClass: 'btn-red',
+                action: function(){
+                    window.location.href = document.getElementById('go_back').href;
+                }
+            },
+            cancel: function () {},
+            
+        },
+        
+    });
+
 }
 
 function filter_faculties(){

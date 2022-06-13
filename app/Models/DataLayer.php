@@ -173,6 +173,14 @@ class DataLayer
         return $notes;
     }
 
+    function getDepartment($department_id){
+        return Department::find($department_id);
+    }
+
+    function getFaculty($faculty_id){
+        return Faculty::find($faculty_id);
+    }
+
     function console_log($data){
         echo '<script>';
         echo 'console.log('.json_encode($data).')';

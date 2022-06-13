@@ -5,6 +5,22 @@
 <li class="breadcrumb-item active" aria-current="page">@lang('breadcrumb.notesUploaded')</li>
 @endsection
 
+@section('message')
+<!-- @if(isset($message)) -->
+<!-- <div class="col col-12">
+    <div class="card card-responsive popup-message mb-3 alert alert-success alert-dismissible text-center" id="msg">
+        <strong id="msg_text">Ciao</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="close"></button>
+    </div>
+</div> -->
+<div class="col">
+    <h1> ciao </h1>
+</div>
+
+
+<!-- @endif -->
+@endsection
+
 @section('cards')
 <div class="col-xl-3 col-sm-6 col-12"> 
     <div class="card">

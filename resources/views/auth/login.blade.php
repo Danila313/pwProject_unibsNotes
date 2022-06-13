@@ -62,6 +62,8 @@
                                 @lang('user.login')
                                 </button>
 
+                                <a href="{{ route('home')}}" type="button" class="btn btn-secondary" role="button">@lang('buttons.goBack')</a>
+
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                     @lang('user.forgotPsw')

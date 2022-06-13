@@ -100,6 +100,8 @@
                                 @if($writer->followedBy(Auth::user()->id))
                                 <a href="{{ route('writer.unfollow', ['user' => $writer->id]) }}" type="button" role="button" class="btn btn-danger btn-block form-control" style="border-radius: 20px;">@lang('buttons.unfollow')</a>
                                 <a href="{{ route('note.details', ['note'=> $note_id]) }}" type="button" role="button" class="btn btn-secondary btn-block form-control mt-1" style="border-radius: 20px;">@lang('buttons.goBack')</a>
+                                @elseif($writer->id == Auth::user()->id)
+                                <a href="{{ route('note.details', ['note'=> $note_id]) }}" type="button" role="button" class="btn btn-secondary btn-block form-control mt-1" style="border-radius: 20px;">@lang('buttons.goBack')</a>
                                 @else
                                 <a href="{{ route('writer.follow', ['user' => $writer->id]) }}" type="button" role="button" class="btn btn-primary btn-block form-control" style="border-radius: 20px;">@lang('buttons.follow')</a>
                                 <a href="{{ route('note.details', ['note'=> $note_id]) }}" type="button" role="button" class="btn btn-secondary btn-block form-control mt-1" style="border-radius: 20px;">@lang('buttons.goBack')</a>

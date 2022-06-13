@@ -2,10 +2,10 @@
 
 return [
     'title' => 'Titolo',
-    'department' => 'Dipartimento',
-    'faculty' => 'Facoltà',
+    'department' => 'Area',
+    'faculty' => 'Corso di Studi',
     'course' => 'Corso',
-    'year' => 'Anno',
+    'year' => 'Anno Accademico',
     'writer' => 'Autore',
     'score' => 'Punteggio',
     'pages' => 'Pagine',

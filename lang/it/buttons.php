@@ -5,6 +5,7 @@ return [
     'details' => 'DETTAGLI',
     'edit' => 'MODIFICA',
     'goBack' => 'TORNA INDIETRO',
+    'noFilters' => 'ANNULLA FILTRI',
     'logout' => 'ESCI',
     'saveChanges' => 'SALVA MODIFICHE',
     'vote' => 'VOTA',

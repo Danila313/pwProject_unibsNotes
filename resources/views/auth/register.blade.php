@@ -149,6 +149,7 @@
                                 <button type="submit" class="btn btn-primary">
                                 @lang('user.register')
                                 </button>
+                                <a href="{{ route('home')}}" type="button" class="btn btn-secondary" role="button">@lang('buttons.goBack')</a>
                             </div>
                         </div>
                     </form>

@@ -181,7 +181,7 @@
 
     <div class="row justify-content-end">
         <div class="col-5 text-center">
-            <a href="{{ route('user.mynotes.uploaded', ['user'=>1]) }}" class="btn btn-secondary form-control rounded-pill" role="button">@lang('buttons.goBack')</a>
+            <a id="go_back" href="{{ route('user.mynotes.uploaded', ['user'=>1]) }}" class="btn btn-secondary form-control rounded-pill" role="button" onclick="event.preventDefault(); confirm_go_back();">@lang('buttons.goBack')</a>
         </div>
     </div>
     

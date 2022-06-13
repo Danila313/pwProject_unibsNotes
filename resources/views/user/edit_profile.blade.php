@@ -119,7 +119,7 @@
                   </div>
                   <div class="row pt-1 justify-content-center">
                     <div class="col-10">
-                        <a href="{{ route('profile.show') }}" type="button" class="btn btn-secondary btn-block form-control" style="border-radius: 20px;">@lang('buttons.goBack')</a>
+                        <a id="go_back" href="{{ route('profile.show') }}" type="button" class="btn btn-secondary btn-block form-control" style="border-radius: 20px;" onclick="event.preventDefault(); confirm_go_back();">@lang('buttons.goBack')</a>
                     </div>
                   </div>
                 </div>

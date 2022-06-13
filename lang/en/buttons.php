@@ -5,6 +5,7 @@ return [
     'details' => 'DETAILS',
     'edit' => 'EDIT',
     'goBack' => 'GO BACK',
+    'noFilters' => 'REMOVE FILTERS',
     'logout' => 'LOGOUT',
     'saveChanges' => 'SAVE CHANGES',
     'vote' => 'VOTE',

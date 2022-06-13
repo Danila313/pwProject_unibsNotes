@@ -83,6 +83,7 @@ Route::group(['middleware' => ['auth','language']], function () {
     Route::get('/user/mynotes/downloaded/{note}/score', [NotesController::class, 'updateNoteScore'])->name('note.score');
     Route::get('/user/mynotes/uploaded/{note}/edit', [NotesController::class, 'update'])->name('note.update');
     Route::get('/user/{note}/download', [NotesController::class, 'download'])->name('note.download');
+    Route::get('/user/{note}/downloadAgain', [NotesController::class, 'downloadAgain'])->name('note.downloadAgain');
     Route::get('/user/{note}/delete', [NotesController::class, 'delete'])->name('note.delete');
 
 });

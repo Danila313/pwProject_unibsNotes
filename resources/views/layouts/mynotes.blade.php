@@ -38,6 +38,10 @@
 <div class="container">
 
     <div class="row justify-content-center">
+        @yield('message')
+    </div>
+
+    <div class="row justify-content-center">
         @yield('cards')
     </div>
 

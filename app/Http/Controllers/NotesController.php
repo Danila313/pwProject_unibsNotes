@@ -111,6 +111,13 @@ class NotesController extends Controller
         return response()->download('storage/notes_files/'.$note_obj->file, $note_obj->file);
     }
 
+    public function downloadAgain($note){
+        $dl = new DataLayer();
+        $note_obj = $dl->findNoteById($note);
+
+        return response()->download('storage/notes_files/'.$note_obj->file, $note_obj->file);
+    }
+
     /**
      * Display the specified resource.
      *
@@ -174,6 +181,7 @@ class NotesController extends Controller
     {
         $dl = new DataLayer();
         $dl->deleteNote($note);
+        $delete = "ok";
 
         return redirect()->route('user.mynotes.uploaded');
     }

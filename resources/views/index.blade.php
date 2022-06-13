@@ -58,30 +58,38 @@
     <form name="filter" method="get" action="{{ route('filter') }}" enctype="multipart/form-data">
     @csrf
     
-<div class="row justify-content-center pt-5">
+<div class="row justify-content-between pt-5">
         <div class="w-100 col text-center">
             <select id="department" name="department" class="form-select" onchange="if (this.selectedIndex) filter_faculties()">
                 @if(isset($department))
-                    <option selected="selected" value="">{{$department->name}}</option>
+                    <option selected="selected" value="{{$department->id}}">{{$department->name}}</option>
                 @else 
                     <option selected="selected" value="">@lang('note.department')</option>
                 @endif
-                @foreach($departments as $department)
-                    <option value="{{ $department->id }}">{{$department->name}}</option>
+                @foreach($departments as $d)
+                    <option value="{{ $d->id }}">{{$d->name}}</option>
                 @endforeach
             </select>
         </div>
         <div class="w-100 col text-center">
             <select id="faculty" name="faculty" class="form-select">
-                <option selected="selected" value="">@lang('note.faculty')</option>
-                @foreach($faculties as $faculty)
-                    <option value=" {{ $faculty->id }}">{{$faculty->name}}</option>
+                @if(isset($faculty))
+                    <option selected="selected" value="{{$faculty->id}}">{{$faculty->name}}</option>
+                @else 
+                    <option selected="selected" value="">@lang('note.faculty')</option>
+                @endif
+                @foreach($faculties as $f)
+                    <option value=" {{ $f->id }}">{{$f->name}}</option>
                 @endforeach
             </select>
         </div>
         <div class="w-100 col text-center">
             <select id="year" name="year" class="form-select">
-                <option selected="selected" value="">@lang('note.year')</option>
+                @if(isset($year))
+                    <option selected="selected" value="{{$year}}">{{$year}}</option>
+                @else 
+                    <option selected="selected" value="">@lang('note.year')</option>
+                @endif
                 @for ($i = 2022; $i >= 2000; $i--)
                 <option value="{{$i}}">{{$i}}</option>
                 @endfor
@@ -89,14 +97,25 @@
         </div>
         <div class="w-100 col text-center">
             <select id="score" name="score" class="col form-select">
-                <option selected="selected" value="">@lang('note.score')</option>
+                @if(isset($score))
+                    <option selected="selected" value="{{$score}}">{{$score}}</option>
+                @else 
+                    <option selected="selected" value="">@lang('note.score')</option>
+                @endif
                 @for ($i = 1; $i <= 5; $i++)
                 <option value="{{$i}}">{{$i}}</option>
                 @endfor
             </select>
         </div>
-        <div class="col text-center">
-            <input id="mySubmit" type="submit" value="@lang('buttons.filter')" class="btn btn-primary btn-sm" role="button">
+        <div class="w-100 col text-center">
+            <div class="row">
+                <input id="mySubmit" type="submit" value="@lang('buttons.filter')" class="btn btn-primary" role="button">
+            </div>
+            @if(isset($department) || isset($faculty) || isset($year) || isset($score))
+            <div class="row pt-1">
+                <a href="{{ route('home')}}" type="button" class="btn btn-secondary form-control" role="button">@lang('buttons.noFilters')</a>
+            </div>
+        @endif
         </div>
     </div>
     </form>

@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'login' => 'Login',
+    'login' => 'LOGIN',
     'rememberMe' => 'Remember Me',
     'forgotPsw' => 'Forgot Your Password?',
-    'register' => 'Register',
+    'register' => 'REGISTER',
 
     'email' => 'Email Address',
     'password' => 'Password',
