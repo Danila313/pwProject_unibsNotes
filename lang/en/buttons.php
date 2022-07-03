@@ -4,6 +4,7 @@ return [
     'filter' => 'FILTER',
     'details' => 'DETAILS',
     'edit' => 'EDIT',
+    'cancel' => 'CANCEL',
     'goBack' => 'GO BACK',
     'noFilters' => 'REMOVE FILTERS',
     'logout' => 'LOGOUT',

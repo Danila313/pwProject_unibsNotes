@@ -69,7 +69,7 @@
             <th scope="col">@lang('note.title')</th>
             <th scope="col">@lang('note.course')</th>
             <th scope="col">@lang('note.writer')</th>
-            <th scope="col"># @lang('note.pages')</th>
+            <th scope="col">@lang('note.numberOfPages')</th>
             <th scope="col"></th>
             <th scope="col"></th>
             </tr>

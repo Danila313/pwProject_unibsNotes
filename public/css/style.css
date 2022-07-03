@@ -56,6 +56,11 @@ body {
     margin: 0 1em;
   }
 
+  .navbar .navbar-nav .nav-item .nav-link{
+    color: rgb(0, 0, 0);
+  }
+
+
 .navbar .navbar-nav .nav-item::after {
     position: absolute;
     bottom: 0;

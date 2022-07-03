@@ -8,10 +8,13 @@ return [
     'year' => 'Year',
     'writer' => 'Writer',
     'score' => 'Score',
+    'scoreGreaterThan' => 'Score greater than',
     'pages' => 'Pages',
+    'numberOfPages' => 'Number of Pages',
     'file' => 'Note file',
     'professor' => 'Professor',
 
     'uploadedOn' => 'UPLOADED ON',
-    'abstract' => 'Abstract'
+    'abstract' => 'Abstract',
+    'maxAbstract' => '[Max 500 characters]'
 ];

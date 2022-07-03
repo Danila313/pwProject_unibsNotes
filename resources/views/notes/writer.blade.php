@@ -62,6 +62,7 @@
 
 @section('corpo')
 <div class="container">
+
     <div class="row justify-content-center">
         <div class="col-5">
             <div class="card" style="border-radius: 5px;">
@@ -103,8 +104,36 @@
                                 @elseif($writer->id == Auth::user()->id)
                                 <a href="{{ route('note.details', ['note'=> $note_id]) }}" type="button" role="button" class="btn btn-secondary btn-block form-control mt-1" style="border-radius: 20px;">@lang('buttons.goBack')</a>
                                 @else
-                                <a href="{{ route('writer.follow', ['user' => $writer->id]) }}" type="button" role="button" class="btn btn-primary btn-block form-control" style="border-radius: 20px;">@lang('buttons.follow')</a>
-                                <a href="{{ route('note.details', ['note'=> $note_id]) }}" type="button" role="button" class="btn btn-secondary btn-block form-control mt-1" style="border-radius: 20px;">@lang('buttons.goBack')</a>
+                                <div class="row justify-content-between p-0">
+                                    <div class="col-10 p-0">
+                                        <a href="{{ route('writer.follow', ['user' => $writer->id]) }}" type="button" role="button" class="btn btn-primary btn-block form-control" style="border-radius: 20px;">@lang('buttons.follow')</a>
+                                    </div>
+                                    <div class="col-2">
+                                        <!-- Button trigger modal -->                                       
+                                        <button type="button" class="btn btn-light btn-small" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="bi bi-info-circle"></i>
+                                        </button>
+                                    </div>                                
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Segui autore</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Se scegli di seguire un autore riceverai una mail per ogni sua pubblicazione.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                <div class="row justify-content-left p-0">
+                                    <div class="col-10 p-0 ms-2">
+                                        <a href="{{ route('note.details', ['note'=> $note_id]) }}" type="button" role="button" class="btn btn-secondary btn-block form-control mt-1" style="border-radius: 20px;">@lang('buttons.goBack')</a>
+                                    </div>
+                                </div>
                                 @endif
                             </div>
                             @else
@@ -128,7 +157,7 @@
                 <th scope="col"><i class="bi bi-star-fill text-warning" fill="currentColor"></i></th>
                 <th scope="col">@lang('note.title')</th>
                 <th scope="col">@lang('note.course')</th>
-                <th scope="col"># @lang('note.pages')</th>
+                <th scope="col">@lang('note.numberOfPages')</th>
                 <th scope="col"></th>
             </tr>
             </thead>

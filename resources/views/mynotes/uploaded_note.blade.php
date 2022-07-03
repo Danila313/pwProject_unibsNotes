@@ -7,6 +7,21 @@
 <li class="breadcrumb-item active" aria-current="page">@lang('breadcrumb.noteDetails')</li>
 @endsection
 
+@section('message')
+@if(isset($succ))
+<div class="row justify-content-md-center">
+    <div class="col-6">
+        <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
+            <i class="bi bi-check-circle-fill pr-1"></i>
+            <div class="ms-1">{{ $succ }}</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+@endif
+@endsection
+
+
 @section('column')
 <div class="row p-3 pb-0 pt-0">
     <a href="{{ route('note.edit', ['note'=> $note->id]) }}" class="btn btn-download form-control rounded-pill" role="button">@lang('buttons.edit')</a>

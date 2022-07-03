@@ -50,6 +50,7 @@
       <div class="col-7">
         <div class="p-3 border bg-white">
             <h4>@lang('note.abstract')</h4>
+            <h6>@lang('note.maxAbstract')</h6>
             <div class="input-group">
             <textarea class="form-control" name="abstract"></textarea>
             </div>
@@ -181,7 +182,7 @@
 
     <div class="row justify-content-end">
         <div class="col-5 text-center">
-            <a id="go_back" href="{{ route('user.mynotes.uploaded', ['user'=>1]) }}" class="btn btn-secondary form-control rounded-pill" role="button" onclick="event.preventDefault(); confirm_go_back();">@lang('buttons.goBack')</a>
+            <a id="go_back" href="{{ route('user.mynotes.uploaded', ['user'=>1]) }}" class="btn btn-secondary form-control rounded-pill" role="button" onclick="event.preventDefault(); confirm_go_back();">@lang('buttons.cancel')</a>
         </div>
     </div>
     

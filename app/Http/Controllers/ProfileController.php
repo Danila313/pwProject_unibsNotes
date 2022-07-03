@@ -91,8 +91,12 @@ class ProfileController extends Controller
         }
 
         $dl->updateProfile($user_id, $request->input('employment'), $request->input('faculty_id'), $fileNameToStore);
+
+        $succ = 'Le informazioni sono state aggiornate con successo.';
         
-        return redirect()->route('profile.show');
+        // return redirect()->route('profile.show');
+        return view('user.profile')->with('succ', $succ);
+
     }
 
     /**

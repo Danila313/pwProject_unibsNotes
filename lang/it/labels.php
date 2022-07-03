@@ -11,6 +11,7 @@ return [
     'en' => 'Inglese',
     'it' => 'Italiano',
     'home' => 'Home',
+    'addNote' => 'Carica Appunti',
 
     'information' => 'Informazioni',
     'username' => 'Username',

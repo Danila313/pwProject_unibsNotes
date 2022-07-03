@@ -55,13 +55,14 @@
 @section('corpo')
 <div class="container">
   <div class="row gx-5 gy-3 justify-content-center">
+    @yield('message')
     
     <div class="col-8">
       <div class="p-3 border bg-white">
           <h3>{{ $note->title }}</h3>
           <h6 class="text-secondary"> {{ $note->faculty->department->name }}<i class="bi bi-dot"></i> {{ $note->faculty->name }}</h6>
           <h6 class="text-secondary">{{ $note->course }}<i class="bi bi-dot"></i>{{ $note->professor }}<i class="bi bi-dot"></i>{{ $note->year }}</h6>
-          <h6 class="text-violet"><i class="bi bi-file-earmark text-violet"></i> {{ $note->num_pages }} @lang('note.pages')</h6>
+          <h6 class="text-black"><i class="bi bi-file-earmark text-black"></i> {{ $note->num_pages }} @lang('note.pages')</h6>
       </div>
     </div>
 
@@ -70,7 +71,8 @@
         <h6 class="text-center">
             <i class="bi bi-star-fill text-warning" fill="currentColor"></i> {{ $note->average_score }}</h6>
         <hr/>
-        <h6 class="text-center">@lang('note.uploadedOn') {{ \Illuminate\Support\Str::limit($note->created_at, 10, $end='') }}</h6>
+        <h6 class="text-center">@lang('note.uploadedOn') {{ \Illuminate\Support\Str::limit($note->created_at, 10, $end='') }} DA</h6>
+        <!-- <h6 class="text-center">DA</h6> -->
         <h6><a class="nav-link text-center" href="{{ route('note.writer', ['note_id'=> $note->id])}}"><i class="bi bi-person-circle"></i> {{ $note->writer->name }} {{ $note->writer->lastname }}</a></h6>    
       </div>
     </div>

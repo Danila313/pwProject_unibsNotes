@@ -61,7 +61,13 @@ class NotesController extends Controller
             $this->sendMessageToFollower($receiver, $request->input('title'));
         }
 
-        return redirect()->route('user.mynotes.uploaded', ['user' => $user_id]);
+        $notes_list = auth()->user()->writtenNotes()->get();
+        $rating = auth()->user()->writtenNotes->avg('average_score');
+        $succ_upload = "Operazione di rimozione effettuata con successo.";
+
+        return view('mynotes.uploaded')->with('notesList', $notes_list)->with('rating', $rating)->with('succ_upload', $succ_upload);
+
+        // return redirect()->route('user.mynotes.uploaded', ['user' => $user_id]);
     }
 
     public function sendMessageToFollower($receiver, $note_title) {
@@ -179,11 +185,24 @@ class NotesController extends Controller
      */
     public function delete($note)
     {
+        // $dl = new DataLayer();
+        // $sono_qui = "sono qui";
+        // $dl->console_log($sono_qui);
+        // $dl->deleteNote($note);
+        // $succ = "Operazione di rimozione effettuata con successo.";
+        // $dl->console_log($succ);
+
+        // return redirect()->route('user.mynotes.uploaded', ['succ' => $succ]);
+        
         $dl = new DataLayer();
         $dl->deleteNote($note);
-        $delete = "ok";
+        $succ = "Operazione di rimozione effettuata con successo.";
 
-        return redirect()->route('user.mynotes.uploaded');
+        $notes_list = auth()->user()->writtenNotes()->get();
+        $rating = auth()->user()->writtenNotes->avg('average_score');
+
+        return view('mynotes.uploaded')->with('notesList', $notes_list)->with('rating', $rating)->with('succ', $succ);
+
     }
 
     public function writer($note_id)

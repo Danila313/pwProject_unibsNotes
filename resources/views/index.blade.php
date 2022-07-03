@@ -100,14 +100,14 @@
                 @if(isset($score))
                     <option selected="selected" value="{{$score}}">{{$score}}</option>
                 @else 
-                    <option selected="selected" value="">@lang('note.score')</option>
+                    <option selected="selected" value="">@lang('note.scoreGreaterThan')</option>
                 @endif
                 @for ($i = 1; $i <= 5; $i++)
                 <option value="{{$i}}">{{$i}}</option>
                 @endfor
             </select>
         </div>
-        <div class="w-100 col text-center">
+        <div class="w-100 col text-center m-4 mt-0 mb-0">
             <div class="row">
                 <input id="mySubmit" type="submit" value="@lang('buttons.filter')" class="btn btn-primary" role="button">
             </div>
@@ -132,7 +132,7 @@
                 <th scope="col">@lang('note.title')</th>
                 <th scope="col">@lang('note.course')</th>
                 <th scope="col">@lang('note.writer')</th>
-                <th scope="col"># @lang('note.pages')</th>
+                <th scope="col">@lang('note.numberOfPages')</th>
                 <th scope="col"></th>
               </tr>
             </thead>

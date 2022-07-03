@@ -89,18 +89,36 @@ function checkNote(button){
 
 function confirm_note_deletion(){
     $.confirm({
-        title: 'Attention!',
-        content: 'You are deleting this note. Do you confirm?',
+        title: 'Attenzione!',
+        content: 'Stai cancellando questo documento. Confermi?',
         buttons: {
             somethingElse: {
-                text: 'Confirm',
+                text: 'Confermo',
                 btnClass: 'btn-red',
                 action: function(){
                     window.location.href = document.getElementById('delete_note').href;
                 }
             },
-            cancel: function () {},
+            cancelButton: {text: 'Annulla'},            
             
+        },
+        
+    });
+}
+
+function confirm_logout(){
+    $.confirm({
+        title: 'Attenzione!',
+        content: 'Sei sicuro di voler effettuare il logout?',
+        buttons: {
+            somethingElse: {
+                text: 'Confermo',
+                btnClass: 'btn-red',
+                action: function(){
+                    document.getElementById('logout-form').submit();
+                }
+            },
+            cancelButton: {text: 'Annulla'},            
         },
         
     });
@@ -108,17 +126,17 @@ function confirm_note_deletion(){
 
 function confirm_go_back(){
     $.confirm({
-        title: 'Attention!',
-        content: 'If you go back you will lose all the data you just entered. Do you confirm?',
+        title: 'Attenzione!',
+        content: 'Se torni indietro perderai tutti i dati appena inseriti. Confermi?',
         buttons: {
             somethingElse: {
-                text: 'Confirm',
+                text: 'Confermo',
                 btnClass: 'btn-red',
                 action: function(){
                     window.location.href = document.getElementById('go_back').href;
                 }
             },
-            cancel: function () {},
+            cancelButton: {text: 'Annulla'},            
             
         },
         

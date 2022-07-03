@@ -28,13 +28,14 @@
             </div>  
 
     </div>
+    <div class="row p-3 pb-1">
+        <input id="mySubmit" type="submit" class="btn btn-download form-control rounded-pill" role="button" value="@lang('buttons.vote')">
+    </div>
+
 </div>
 
-<div class="row p-3 pb-1">
-    <input id="mySubmit" type="submit" class="btn btn-download form-control rounded-pill" role="button" value="@lang('buttons.vote')">
-</div>
 
-<div class="row p-3 pt-0">
+<div class="row p-3">
     <a href="{{ route('user.mynotes.downloaded', ['note'=> $note->id]) }}" class="btn btn-secondary form-control rounded-pill" role="button">@lang('buttons.goBack')</a>
 </div>
 </form> 

@@ -5,23 +5,30 @@
 <li class="breadcrumb-item active" aria-current="page">@lang('breadcrumb.notesUploaded')</li>
 @endsection
 
-@section('message')
-<!-- @if(isset($message)) -->
-<!-- <div class="col col-12">
-    <div class="card card-responsive popup-message mb-3 alert alert-success alert-dismissible text-center" id="msg">
-        <strong id="msg_text">Ciao</strong>
-        <button type="button" class="close" data-dismiss="alert" aria-label="close"></button>
-    </div>
-</div> -->
-<div class="col">
-    <h1> ciao </h1>
-</div>
-
-
-<!-- @endif -->
-@endsection
-
 @section('cards')
+@if(isset($succ))
+<div class="row justify-content-md-center">
+    <div class="col-6">
+        <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
+            <i class="bi bi-check-circle-fill pr-1"></i>
+            <div class="ms-1">{{ $succ }}</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+@elseif(isset($succ_upload))
+<div class="row justify-content-md-center">
+    <div class="col-6">
+        <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
+            <i class="bi bi-check-circle-fill pr-1"></i>
+            <div class="ms-1">{{ $succ_upload }}</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+@endif
+
+
 <div class="col-xl-3 col-sm-6 col-12"> 
     <div class="card">
         <div class="card-content">
@@ -110,7 +117,7 @@
             <th scope="col"><i class="bi bi-star-fill text-warning" fill="currentColor"></i></th>
             <th scope="col">@lang('note.title')</th>
             <th scope="col">@lang('note.course')</th>
-            <th scope="col"># @lang('note.pages')</th>
+            <th scope="col">@lang('note.numberOfPages')</th>
             <th scope="col"></th>
             </tr>
         </thead>

@@ -40,6 +40,18 @@
 @endsection
 
 @section('corpo')
+@if(isset($succ))
+<div class="row justify-content-md-center">
+    <div class="col-6">
+        <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
+            <i class="bi bi-check-circle-fill pr-1"></i>
+            <div class="ms-1">{{ $succ }}</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+@endif
+
     <div class="container">
       <div class="row d-flex justify-content-center align-items-center h-100 pt-3">
         <div class="col col-lg-8 mb-4 mb-lg-0">
@@ -56,7 +68,7 @@
                 <div class="row justify-content-center align-items-end">
                     <div class="col-10">
                         <a href="{{ route('logout') }}" 
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                            onclick="event.preventDefault(); confirm_logout();"
                             type="button" class="btn btn-primary btn-block form-control btn-sm" style="border-radius: 20px;">
                             <i class="bi bi-box-arrow-left"></i>  @lang('buttons.logout')
                         </a>

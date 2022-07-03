@@ -15,6 +15,7 @@
             <a href="{{ route('home')}}" type="button" class="btn btn-secondary form-control" style="border-radius: 20px;" role="button">@lang('buttons.goBack')</a>
         @endif
     @else
+    <a href="{{ route('login') }}" type="button" role="button" class="btn btn-download form-control mb-1">@lang('buttons.download')</a>
     <a href="{{ route('home')}}" type="button" class="btn btn-secondary form-control" style="border-radius: 20px;" role="button">@lang('buttons.goBack')</a>
     @endauth
 @endsection

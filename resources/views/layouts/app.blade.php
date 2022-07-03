@@ -28,7 +28,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white py-1">
             <div class="container">
         
-                <a class="navbar-brand" href="#">UNIBS <i class="bi bi-pencil-square text-primary" fill="currentColor"></i> NOTES</a>
+                <a class="navbar-brand" href="{{ route('home') }}">UNIBS <i class="bi bi-pencil-square text-primary" fill="currentColor"></i> NOTES</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span> </button>
 
