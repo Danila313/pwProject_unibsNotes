@@ -56,7 +56,7 @@
 
 @section('breadcrumb')
 <a class="breadcrumb-item ms-auto" aria-current="page" class="nav-link" href="{{ route('home')}}">@lang('labels.home')</a>
-<a class="breadcrumb-item" aria-current="page" class="nav-link" href="{{ route('note.show', ['note'=> $note_id]) }}">@lang('breadcrumb.noteDetails')</a>
+<a class="breadcrumb-item" aria-current="page" class="nav-link" href="{{ route('note.details', ['note'=> $note_id]) }}">@lang('breadcrumb.noteDetails')</a>
 <li class="breadcrumb-item active" aria-current="page">@lang('breadcrumb.writer')</li>
 @endsection
 

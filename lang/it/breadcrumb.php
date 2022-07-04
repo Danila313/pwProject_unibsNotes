@@ -6,7 +6,7 @@ return [
     'notesDownloaded' => 'Appunti Scaricati',
     'notesUploaded' => 'Appunti Caricati',
     'writer' => 'Autore',
-    'noteDetail' => 'Dettagli Documento',
+    'noteDetails' => 'Dettagli Documento',
 
     'uploadNewNote' => 'Carica Nuovi Appunti',
     'edit' => 'Modifica',

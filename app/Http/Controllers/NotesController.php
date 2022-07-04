@@ -63,7 +63,7 @@ class NotesController extends Controller
 
         $notes_list = auth()->user()->writtenNotes()->get();
         $rating = auth()->user()->writtenNotes->avg('average_score');
-        $succ_upload = "Operazione di rimozione effettuata con successo.";
+        $succ_upload = "Operazione di caricamento effettuata con successo.";
 
         return view('mynotes.uploaded')->with('notesList', $notes_list)->with('rating', $rating)->with('succ_upload', $succ_upload);
 
