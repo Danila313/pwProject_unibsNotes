@@ -55,39 +55,52 @@
 
 @section('corpo')
 <div class="container">
+    
   <div class="row gx-5 gy-3 justify-content-center">
     @yield('message')
     
     <div class="col-8">
       <div class="p-3 border bg-white">
           <h3>{{ $note->title }}</h3>
-          <h6 class="text-secondary"> {{ $note->faculty->department->name }}<i class="bi bi-dot"></i> {{ $note->faculty->name }}</h6>
-          <h6 class="text-secondary">{{ $note->course }}<i class="bi bi-dot"></i>{{ $note->professor }}<i class="bi bi-dot"></i>{{ $note->year }}</h6>
+          <hr class="text-white"/>
+          <h6 class="text-secondary">Area: <b>{{ $note->faculty->department->name }}</b></h6>
+          <h6 class="text-secondary">Corso di Studi: <b>{{$note->faculty->name }}</b></h6>
+          <hr/>
+          <h6 class="text-secondary">Corso: <b>{{ $note->course }}</b></h6>
+          <h6 class="text-secondary">Professore: <b>{{ $note->professor }}</b></h6>
+          <h6 class="text-secondary">Anno Accademico: <b>{{ $note->year }}</b></h6>
+          <hr/>
           <h6 class="text-black"><i class="bi bi-file-earmark text-black"></i> {{ $note->num_pages }} @lang('note.pages')</h6>
       </div>
+
+      <div class="mt-3 p-3 border bg-white">
+        <h5>@lang('note.abstract')</h5>
+        <p>{{ $note->abstract }}</p>
+      </div>
+
     </div>
 
     <div class="col-3">
-      <div class="p-3 border bg-white" style="border-radius: 20px;">
-        <h6 class="text-center">
-            <i class="bi bi-star-fill text-warning" fill="currentColor"></i> {{ $note->average_score }}</h6>
+      <div class="mb-3 p-3 border bg-white" style="border-radius: 20px;">
+        <h5 class="text-center">
+            <i class="bi bi-star-fill text-warning" fill="currentColor"></i> {{ $note->average_score }}</h5>
         <hr/>
         <h6 class="text-center">@lang('note.uploadedOn') {{ \Illuminate\Support\Str::limit($note->created_at, 10, $end='') }} DA</h6>
-        <!-- <h6 class="text-center">DA</h6> -->
-        <h6><a class="nav-link text-center" href="{{ route('note.writer', ['note_id'=> $note->id])}}"><i class="bi bi-person-circle"></i> {{ $note->writer->name }} {{ $note->writer->lastname }}</a></h6>    
+        <h5><a class="nav-link text-center" href="{{ route('note.writer', ['note_id'=> $note->id])}}"><i class="bi bi-person-circle"></i> {{ $note->writer->name }} {{ $note->writer->lastname }}</a></h5>    
       </div>
+      @yield('column')
     </div>
     
-    <div class="col-8">
+    <!-- <div class="col-8">
       <div class="p-3 border bg-white">
         <h5>@lang('note.abstract')</h5>
         <p>{{ $note->abstract }}</p>
       </div>
-    </div>
+    </div> -->
 
-    <div class="col-3">
+    <!-- <div class="col-3">
         @yield('column')
-    </div>
+    </div> -->
 
   </div>
 </div>
