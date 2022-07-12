@@ -53,7 +53,7 @@ class NotesController extends Controller
         // Filename to store
         $fileNameToStore = $filename.'_'.$user_id.'.'.$extension;
         // Upload Image
-        $path = $request->file('note_file')->storeAs('public/notes_files/',$fileNameToStore);
+        $path = $request->file('note_file')->storeAs('/public/notes_files/',$fileNameToStore);
 
         $dl->addNote($request->input('title'), $request->input('course'), $request->input('professor'), $request->input('year'), $request->input('pages'), $fileNameToStore, $request->input('abstract'), "0", $user_id, $request->input('faculty'));
         $receivers = $dl->getUserFollowers(auth()->user());
@@ -172,8 +172,13 @@ class NotesController extends Controller
         $dl = new DataLayer();
         $user_id = auth()->id();
         $dl->updateNote($note, $request->input('title'), $request->input('course'), $request->input('professor'), $request->input('year'), $request->input('pages'), $request->input('abstract'), $request->input('faculty'));
+
+        $succ = "Il documento e' stato modificato con successo.";
+
+        $note_obj = $dl->findNoteById($note);
+        return view('mynotes.uploaded_note')->with('note', $note_obj)->with('succ', $succ);
         
-        return redirect()->route('user.mynotes.myuploadednote', ['note' => $note]);
+        // return redirect()->route('user.mynotes.myuploadednote', ['note' => $note]);
 
     }
 
